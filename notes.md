@@ -217,3 +217,210 @@ In this part, I learned how to:
 - Delete a user using `userdel`.
 - Delete a user and its home directory using `userdel -r`.
 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+# Part 2 – Group Management
+
+## 1. Create a New Group
+
+### Command
+
+```bash
+
+sudo groupadd developers
+
+```
+
+### Description
+
+I create a group called developers.
+
+### Screenshot
+
+![Alt text](screenshots/groupadd.png)
+
+## 2. Display Group Information
+
+### Command
+
+```bash
+
+getent group developers
+
+```
+
+### Description
+
+This command shows details about the developers group.
+
+### Screenshot
+
+![Alt text](screenshots/getent-group.png)
+
+## 3. Rename a Group
+
+### Command
+
+```bash
+
+sudo groupmod -n security developers
+
+```
+
+### Description
+
+The developers group is renamed to security.
+
+### Screenshot
+
+![Alt text](screenshots/groupmod.png)
+
+## 4. Add a User to a Group
+
+### Command
+
+```bash
+
+sudo gpasswd -a testuser security
+
+```
+
+### Description
+
+I add testuser to the security group.
+
+### Screenshot
+
+![Alt text](screenshots/gpasswd-add.png)
+
+## 5. Remove a User from a Group
+
+### Command
+
+```bash
+
+sudo gpasswd -d testuser security
+
+```
+
+### Description
+
+The testuser is removed from the security group.
+
+### Screenshot
+
+![Alt text](screenshots/gpasswd-delete.png)
+
+## 6. Switch to a New Group
+
+### Command
+
+```bash
+
+sudo gpasswd -a testuser security
+
+```
+
+### Description
+
+My current session switches to the security group.
+
+### Screenshot
+
+![Alt text](screenshots/newgrp.png)
+
+## 7. View All Groups
+
+### Command
+
+```bash
+
+cat /etc/group
+
+```
+
+### Description
+
+This shows all groups on my system.
+
+### Screenshot
+
+![Alt text](screenshots/etc-group.png)
+
+## 8. Display Members of a Group
+
+### Command
+
+```bash
+
+getent group security
+
+```
+
+### Description
+
+The members of the security group are displayed.
+
+### Screenshot
+
+![Alt text](screenshots/group-members.png)
+## 9. Delete a Group
+
+### Command
+
+```bash
+
+sudo groupdel security
+
+```
+
+### Description
+
+The security group is deleted.
+
+### Screenshot
+
+![Alt text](screenshots/groupdel.png)
+
+## 10. Verify Group Deletion
+
+### Command
+
+```bash
+
+getent group security
+
+```
+
+### Description
+
+I check if the security group still exists.
+
+### Screenshot
+
+![Alt text](screenshots/group-verify.png)
+
+# conclusion
+
+In this part here is what I learned:
+
+- I can create a group with `groupadd`.
+
+- `getent group` helps me view group information.
+
+- I rename a group using `groupmod`.
+
+- To add a user to a group I use `gpasswd -a`.
+
+- ` -d` removes a user from a group.
+
+- `newgrp` switches my current session to another group.
+
+- All system groups are shown with `cat /etc/group`.
+
+- Group members are displayed using `getent group`.
+
+- I delete a group, with `groupdel`.
+
+- Finally I verify group deletion using `getent group`.
