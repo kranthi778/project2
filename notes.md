@@ -106,7 +106,7 @@ I need to see password aging and account expiration information for testuser. Th
 
 ```bash
 
-lastlog
+lastlog2
 
 ```
 
@@ -116,7 +116,7 @@ I want to see the login information for all users, including testuser. This comm
 
 ### Screenshot
 
-![Alt text](screenshots/lastlog.png)
+![Alt text](screenshots/lastlog2.png)
 
 ---
 
