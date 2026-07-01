@@ -76,7 +76,7 @@ I want to know the password status of testuser. This command helps me see the pa
 
 ### Screenshot
 
-![ text](screenshots/passwd-status.png)
+![Alt text](screenshots/passwd-status.png)
 
 ---
 
@@ -156,7 +156,7 @@ If I locked the testuser user account I can unlock it using this command. This c
 
 ### Screenshot
 
-![ text](screenshots/passwd-unlock.png)
+![Alt text](screenshots/passwd-unlock.png)
 
 ---
 
@@ -194,9 +194,12 @@ sudo userdel -r testuser
 
 I can also delete the testuser user account and its home directory. This command deletes the testuser user account and its home directory.
 
+lt text](screenshots/userdel.png)
+
+---
 ### Screenshot
 
-![ text](screenshots/userdel-r.png)
+![Alt text](screenshots/userdel-r.png)
 
 ---
 # Conclusion
