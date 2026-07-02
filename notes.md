@@ -1175,3 +1175,246 @@ In this part I learned how to:
 - View the apache2 service logs using `journalctl`.
 
 - List all the failed services using `systemctl --failed`.
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# Part 6 – Storage Management
+
+## 1. Display Block Devices
+
+### Scenario
+
+When I am working with Storage Management I need to see all the Storage Devices that're available. This is important because I have to identify all the Storage Devices before I can create a partition or fix a problem with a disk.
+
+### Command
+
+```bash
+
+lsblk
+
+```
+
+### Description
+
+The `lsblk` command is used for Storage Management. It shows me information about all the block devices, including disks and partitions. This is very useful for Storage Management.
+
+### Screenshot
+
+![Alt text](screenshots/lsblk.png)
+
+---
+
+## 2. Display Filesystem Information
+
+### Scenario
+
+I need to know what type of filesystem is being used by the Storage Devices and what the UUID is. This information is important for Storage Management.
+
+### Command
+
+```bash
+
+lsblk -f
+
+```
+
+### Description
+
+The `lsblk -f` command is used for Storage Management. It shows me the block devices, the type of filesystem the UUID and where they are mounted. This is useful for Storage Management because it gives me all the information I need about the Storage Devices.
+
+### Screenshot
+
+![Alt text](screenshots/lsblk-f.png)
+
+---
+
+## 3. Display Filesystem UUIDs
+
+### Scenario
+
+As a system administrator I need to know the UUID of a partition before I can edit the `/etc/fstab` file. This is a part of Storage Management.
+
+### Command
+
+```bash
+
+sudo blkid
+
+```
+
+### Description
+
+The `blkid` command is used for Storage Management. It shows me the UUID, the type of filesystem and the labels of the Storage Devices. This is useful for Storage Management because it gives me the information I need to work with the Storage Devices.
+
+### Screenshot
+
+![Alt text](screenshots/blkid.png)
+
+---
+
+## 4. Display Mounted Filesystems
+
+### Scenario
+
+I need to see which filesystems are currently being used. This is important for Storage Management because I need to know what is going on with the Storage Devices.
+
+### Command
+
+```bash
+
+findmnt
+
+```
+
+### Description
+
+The `findmnt` command is used for Storage Management. It shows me all the mounted filesystems in a tree structure. This is useful for Storage Management because it gives me a picture of how the Storage Devices are being used.
+
+### Screenshot
+
+![Alt text](screenshots/findmnt.png)
+
+---
+
+## 5. Display Disk Usage by Filesystem Type
+
+### Scenario
+
+I want to see how much space is available on the disks and what type of filesystem is being used. This is a part of Storage Management.
+
+### Command
+
+```bash
+
+df -Th
+
+```
+
+### Description
+
+The `df -Th` command is used for Storage Management. It shows me how much space is being used by the disks and what type of filesystem is being used. This is useful for Storage Management because it gives me the information I need to manage the Storage Devices.
+
+### Screenshot
+
+![Alt text](screenshots/df-th.png)
+
+---
+
+## 6. Display File and Directory Sizes
+
+### Scenario
+
+One of the directories is using much space and I need to find out which files are the biggest. This is a part of Storage Management.
+
+### Command
+
+```bash
+
+du -ah
+
+```
+
+### Description
+
+The `du -ah` command is used for Storage Management. It shows me the size of all the files and directories. This is useful for Storage Management because it helps me identify which files are using the space.
+
+### Screenshot
+
+![Alt text](screenshots/du-ah.png)
+
+---
+
+## 7. Display Mounted Devices
+
+### Scenario
+
+Before I remove a USB drive I need to make sure it is not being used. This is a part of Storage Management.
+
+### Command
+
+```bash
+
+mount
+
+```
+
+### Description
+
+The `mount` command is used for Storage Management. It shows me all the mounted filesystems and where they are mounted. This is useful for Storage Management because it helps me avoid removing a device that is still being used.
+
+### Screenshot
+
+![Alt text](screenshots/mount.png)
+
+---
+
+## 8. Display Partition Table
+
+### Scenario
+
+Before I create or modify partitions I need to see how the disks are currently set up. This is a part of Storage Management.
+
+### Command
+
+```bash
+
+sudo fdisk -l
+
+```
+
+### Description
+
+The `fdisk -l` command is used for Storage Management. It shows me all the available disks and their partition tables. This is useful for Storage Management because it gives me the information I need to work with the partitions.
+
+### Screenshot
+
+![Alt text](screenshots/fdisk-l.png)
+
+---
+
+## 9. Check Filesystem Health (Read-
+
+### Scenario
+
+Before I do any maintenance I need to check the filesystem to make sure it is okay. This is a part of Storage Management.
+
+### Command
+
+```bash
+
+sudo fsck -N /dev/sda1
+
+```
+
+### Description
+
+The `fsck -N` command is used for Storage Management. It shows me what would happen if I checked the filesystem without actually doing anything. This is useful, for Storage Management because it helps me avoid making any mistakes.
+
+### Screenshot
+
+![Alt text](screenshots/fsck-n.png)
+
+---
+
+#
+
+In this part I learned how to use the following Storage Management commands:
+
+- `lsblk` to view block devices.
+
+- `lsblk -f` to display information.
+
+- `blkid` to view partition UUIDs.
+
+- `findmnt` to display mounted filesystems.
+
+- `df -Th` to check disk usage.
+
+- `du -ah` to analyze file and directory sizes.
+
+- `mount` to view mounted devices.
+
+- `fdisk -l` to inspect partition tables.
+
+- `fsck -N` to preview filesystem checks. I learned about all these Storage Management commands. Storage Management is very important. I will use these Storage Management commands to manage the Storage Devices.
