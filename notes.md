@@ -1397,7 +1397,7 @@ The `fsck -N` command is used for Storage Management. It shows me what would hap
 
 ---
 
-#
+# conclusion
 
 In this part I learned how to use the following Storage Management commands:
 
@@ -1418,3 +1418,241 @@ In this part I learned how to use the following Storage Management commands:
 - `fdisk -l` to inspect partition tables.
 
 - `fsck -N` to preview filesystem checks. I learned about all these Storage Management commands. Storage Management is very important. I will use these Storage Management commands to manage the Storage Devices.
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+# Part 7 – Advanced Package Management
+
+## 1. List Installed Packages
+
+### Scenario
+
+When I am troubleshooting or auditing a system the first thing I need to do is see all the packages that are installed on the system. This is because I need to know what is installed.
+
+### Command
+
+```bash
+
+dpkg -l
+
+```
+
+### Description
+
+The dpkg -l command displays a list of all the packages that are installed on the system. This is really helpful when I need to see what is installed.
+
+### Screenshot
+
+![Alt text](screenshots/dpkg-list.png)
+
+---
+
+## 2. Display Detailed Package Information
+
+### Scenario
+
+Sometimes I need to know more about a package that is installed on the system. For example I might want to know the version of the package or the description of the package.
+
+### Command
+
+```bash
+
+dpkg -s openssh-server
+
+```
+
+### Description
+
+The dpkg -s command displays information about the package that I specify. In this case I am looking at the openssh-server package.
+
+### Screenshot
+
+![Alt text](screenshots/dpkg-status.png)
+
+---
+
+## 3. Find Which Package Owns a File
+
+### Scenario
+
+I might find a file on the system. Wonder which package installed it. This can be helpful when I am trying to figure out what a file does.
+
+### Command
+
+```bash
+
+dpkg -S /bin/ls
+
+```
+
+### Description
+
+The dpkg -S command tells me which package owns the file that I specify. In this case I am looking at the /bin/ file.
+
+### Screenshot
+
+![Alt text](screenshots/dpkg-search.png)
+
+---
+
+## 4. View Package Dependencies
+
+### Scenario
+
+Before I install a package I want to know which packages it depends on. This is because I need to make sure that all the dependencies are installed.
+
+### Command
+
+```bash
+
+apt-cache depends nmap
+
+```
+
+### Description
+
+The apt-cache depends command displays the dependencies of the package that I specify. In this case I am looking at the nmap package.
+
+### Screenshot
+
+![Alt text](screenshots/apt-depends.png)
+
+---
+
+## 5. View Reverse Dependencies
+
+### Scenario
+
+Before I remove a package I want to check which other packages depend on it. This is because I do not want to remove a package that other packages need.
+
+### Command
+
+```bash
+
+apt-cache rdepends nmap
+
+```
+
+### Description
+
+The cache rdepends command displays the packages that depend on the package that I specify. In this case I am looking at the nmap package.
+
+### Screenshot
+
+![Alt text](screenshots/apt-rdepends.png)
+
+---
+
+## 6. Display Package Policy
+
+### Scenario
+
+I want to verify the version of a package that is installed on the system and the versions that are available in the repository.
+
+### Command
+
+```bash
+
+apt-cache policy nmap
+
+```
+
+### Description
+
+The apt-cache policy command displays the version of the package that is installed and the versions that are available. In this case I am looking at the nmap package.
+
+### Screenshot
+
+![Alt text](screenshots/apt-policy.png)
+
+---
+
+## 7. List Manually Installed Packages
+
+### Scenario
+
+I need to distinguish between the packages that I installed manually and the packages that were installed automatically as dependencies.
+
+### Command
+
+```bash
+
+mark showmanual
+
+```
+
+### Description
+
+The apt-mark showmanual command displays the packages that I installed manually.
+
+### Screenshot
+
+![Alt text](screenshots/showmanual.png)
+
+---
+
+## 8. List Automatically Installed Packages
+
+### Scenario
+
+I want to identify the packages that were installed automatically as dependencies.
+
+### Command
+
+```bash
+
+apt-mark showauto
+
+```
+
+### Description
+
+The apt-mark showauto command displays the packages that were installed automatically.
+
+### Screenshot
+
+![Alt text](screenshots/showauto.png)
+
+---
+
+## 9. List Upgradable Packages
+
+### Scenario
+
+Before I update the system I want to check which packages have updates.
+
+### Command
+
+```bash
+
+list --upgradable
+
+```
+
+### Description
+
+The apt list --upgradable command displays all the packages that can be upgraded.
+
+### Screenshot
+
+![Alt text](screenshots/upgradable.png)
+
+---
+
+# Conclusion
+
+In this part, I learned how to:
+
+- List installed packages using `dpkg -l`.
+- View package details using `dpkg -s`.
+- Identify which package owns a file using `dpkg -S`.
+- View package dependencies using `apt-cache depends`.
+- View reverse dependencies using `apt-cache rdepends`.
+- Check package versions using `apt-cache policy`.
+- List manually installed packages using `apt-mark showmanual`.
+- List automatically installed packages using `apt-mark showauto`.
+- Display packages available for upgrade using `apt list --upgradable`.
+
+
