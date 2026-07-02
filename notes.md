@@ -96,7 +96,7 @@ I need to see password aging and account expiration information for testuser. Th
 
 ### Screenshot
 
-![Alt text](screenshots/chage.png)
+![Alt text](screenshots/chage-l.png)
 
 ---
 
