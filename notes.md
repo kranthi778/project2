@@ -424,3 +424,225 @@ In this part here is what I learned:
 - I delete a group, with `groupdel`.
 
 - Finally I verify group deletion using `getent group`.
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+# Part 3 – File Ownership & Advanced Permissions
+
+## 1. Change File Owner
+
+### Command
+
+```bash
+
+sudo chown testuser sample.txt
+
+```
+
+### Description
+
+I can change the owner of sample.txt to testuser. This is how I do it. I use the command chown to change the owner of the file sample.txt to testuser.
+
+### Screenshot
+
+![Alt text](screenshots/chown-user.png)
+
+---
+
+## 2. Change Owner and Group
+
+### Command
+
+```bash
+
+sudo chown testuser:security sample.txt
+
+```
+
+### Description
+
+I can change both the owner and the group of the file sample.txt. This is how I do it. I use the command chown to change the owner and group of sample.txt to testuser and security.
+
+### Screenshot
+
+![Alt text](screenshots/owner-group.png)
+
+---
+
+## 3. Display Default File Permissions
+
+### Command
+
+```bash
+
+umask
+
+```
+
+### Description
+
+I can see the default permission mask used when I create files and directories. This is how I do it. I use the command umask to see the default permission mask.
+
+### Screenshot
+
+![Alt text](screenshots/umask.png)
+
+---
+
+## 4. Set a New Default Permission Mask
+
+### Command
+
+```bash
+
+umask 022
+
+```
+
+### Description
+
+I can set a default permission mask for new files and directories. This is how I do it. I use the command umask to set the default permission mask to 022.
+
+### Screenshot
+
+![ text](screenshots/umask-022.png)
+
+---
+
+## 5. Display File Attributes
+
+### Command
+
+```bash
+
+lsattr sample.txt
+
+```
+
+### Description
+
+I can see the attributes assigned to the file sample.txt. This is how I do it. I use the command lsattr to see the attributes of sample.txt.
+
+### Screenshot
+
+![Alt text](screenshots/lsattr.png)
+
+---
+
+## 6. Make a File Immutable
+
+### Command
+
+```bash
+
+sudo chattr +i sample.txt
+
+```
+
+### Description
+
+I can make the file sample.txt immutable. This means it cannot be changed or deleted. This is how I do it. I use the command chattr to make sample.txt immutable.
+
+### Screenshot
+
+![Alt text](screenshots/chattr-add.png)
+
+---
+
+## 7. Remove Attribute
+
+### Command
+
+```bash
+
+sudo chattr -i sample.txt
+
+```
+
+### Description
+
+I can remove the immutable attribute from the file sample.txt. This is how I do it. I use the command chattr to remove the attribute from sample.txt.
+
+### Screenshot
+
+![Alt text](screenshots/chattr-remove.png)
+
+---
+
+## 8. Display File Path Permissions
+
+### Command
+
+```bash
+
+namei -l sample.txt
+
+```
+
+### Description
+
+I can see the permissions of every directory in the path of the file sample.txt. This is how I do it. I use the command namei to see the permissions of every directory in the path of sample.txt.
+
+### Screenshot
+
+![Alt text](screenshots/namei.png)
+
+---
+
+## 9. Set an Access Control List (ACL)
+
+### Command
+
+```bash
+
+sudo setfacl -m u:testuser:rwx sample.txt
+
+```
+
+### Description
+
+I can give testuser read write and execute permissions to the file sample.txt using an Access Control List. This is how I do it. I use the command setfacl to give testuser these permissions.
+
+### Screenshot
+
+![ text](screenshots/setfacl.png)
+
+---
+
+## 10. Display the Access Control List
+
+### Command
+
+```bash
+
+getfacl sample.txt
+
+```
+
+### Description
+
+I can see the Access Control List entries for the file sample.txt. This is how I do it. I use the command getfacl to see the Access Control List entries for sample.txt.
+
+### Screenshot
+
+![Alt text](screenshots/getfacl.png)
+
+---
+#  conclusion
+
+
+In this part, I learned how to:
+
+- Change the owner of a file using `chown`.
+- Change both the owner and group of a file using `chown user:group`.
+- View the default permission mask using `umask`.
+- Set a new default permission mask using `umask 022`.
+- Display file attributes using `lsattr`.
+- Make a file immutable using `chattr +i`.
+- Remove the immutable attribute using `chattr -i`.
+- View file path permissions using `namei -l`.
+- Grant file permissions using `setfacl`.
+- Display Access Control Lists using `getfacl`.
