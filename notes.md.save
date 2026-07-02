@@ -648,7 +648,8 @@ In this part, I learned how to:
 - Display Access Control Lists using `getfacl`.
 
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 
 # Part 4 – Managing Processes
@@ -791,7 +792,7 @@ of remembering the process ID I want to stop a process directly by its name. Thi
 
 ```bash
 
-pkill sleep
+pkill firefox
 
 ```
 
@@ -815,7 +816,7 @@ Multiple instances of a program are. I need to stop all of them. This program is
 
 ```bash
 
-killall 
+killall firefox
 
 ```
 
@@ -839,7 +840,7 @@ I have a task that uses a lot of CPU. I do not want it to affect system performa
 
 ```bash
 
-nice - n 10 sleep 300
+nice -n 10 sleep 300
 
 ```
 
@@ -909,7 +910,7 @@ This command shows me jobs that are running in the shell session. This means tha
 
 ---
 
-# conclusion
+# coclusion
 
 In this part I learned how to manage processes. I learned how to:
 
@@ -932,5 +933,3 @@ In this part I learned how to manage processes. I learned how to:
 - modify process priority using `renice` command.
 
 - monitor background jobs using `jobs` command. Managing processes is a part of using a system. It helps me understand what is going on and how to fix problems.
-
-
