@@ -934,3 +934,244 @@ In this part I learned how to manage processes. I learned how to:
 - monitor background jobs using `jobs` command. Managing processes is a part of using a system. It helps me understand what is going on and how to fix problems.
 
 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# Part 5 – Service Management
+
+## 1. Check Service Status
+
+### Scenario
+
+The web server is not working. I need to see if the apache2 service is running.
+
+### Command
+
+```bash
+
+systemctl status apache2
+
+```
+
+### Description
+
+This command shows me if the apache2 service is running or not.
+
+### Screenshot
+
+![Alt text](screenshots/systemctl-status.png)
+
+---
+
+## 2. Start a Service
+
+### Scenario
+
+The apache2 web server is stopped. I need to start it
+
+### Command
+
+```bash
+
+sudo systemctl start apache2
+
+```
+
+### Description
+
+This command starts the apache2 service away.
+
+### Screenshot
+
+![Alt text](screenshots/systemctl-start.png)
+
+---
+
+## 3. Stop a Service
+
+### Scenario
+
+A service is using many resources. I need to stop the apache2 service.
+
+### Command
+
+```bash
+
+sudo systemctl stop apache2
+
+```
+
+### Description
+
+This command stops the apache2 service.
+
+### Screenshot
+
+![Alt text](screenshots/systemctl-stop.png)
+
+---
+
+## 4. Restart a Service
+
+### Scenario
+
+I changed the apache2 service configuration. I need to apply these changes.
+
+### Command
+
+```bash
+
+sudo systemctl restart apache2
+
+```
+
+### Description
+
+This command stops. Then starts the apache2 service again.
+
+### Screenshot
+
+![Alt text](screenshots/systemctl-restart.png)
+
+---
+
+## 5. Enable a Service at Boot
+
+### Scenario
+
+I want the apache2 web server to start automatically when the system starts.
+
+### Command
+
+```bash
+
+sudo systemctl enable apache2
+
+```
+
+### Description
+
+This command makes the apache2 service start automatically when the system boots up.
+
+### Screenshot
+
+![Alt text](screenshots/systemctl-enable.png)
+
+---
+
+## 6. Disable a Service at Boot
+
+### Scenario
+
+I do not want a service to start automatically during boot.
+
+### Command
+
+```bash
+
+sudo systemctl disable apache2
+
+```
+
+### Description
+
+This command prevents the apache2 service from starting during boot.
+
+### Screenshot
+
+![Alt text](screenshots/systemctl-disable.png)
+
+---
+
+## 7. Check Whether a Service is
+
+### Scenario
+
+I need to know if the apache2 service is running now.
+
+### Command
+
+```bash
+
+systemctl is-active apache2
+
+```
+
+### Description
+
+This command tells me if the apache2 service is running or not.
+
+### Screenshot
+
+![Alt text](screenshots/systemctl-is-active.png)
+
+---
+
+## 8. View Service Logs
+
+### Scenario
+
+The apache2 service did not start. I need to see what went wrong.
+
+### Command
+
+```bash
+
+journalctl -u apache2
+
+```
+
+### Description
+
+This command shows me the logs, for the apache2 service.
+
+### Screenshot
+
+![Alt text](screenshots/journalctl-service.png)
+
+---
+
+## 9. List Failed Services
+
+### Scenario
+
+I want to see which services failed to start when the system booted up.
+
+### Command
+
+```bash
+
+systemctl --failed
+
+```
+
+### Description
+
+This command shows me all the services that failed to start.
+
+### Screenshot
+
+![Alt text](screenshots/systemctl-failed.png)
+
+---
+
+# conclusion
+
+In this part I learned how to:
+
+- Check the apache2 service status using `systemctl status`.
+
+- Start the apache2 service using `systemctl start`.
+
+- Stop the apache2 service using `systemctl stop`.
+
+- Restart the apache2 service using `systemctl restart`.
+
+- Enable the apache2 service to start using `systemctl enable`.
+
+- Disable the apache2 service from starting automatically using `systemctl disable`.
+
+- Check if the apache2 service is running using `systemctl is-active`.
+
+- View the apache2 service logs using `journalctl`.
+
+- List all the failed services using `systemctl --failed`.
