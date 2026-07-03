@@ -1,3 +1,4 @@
+
 # Part 1 – User Management
 
 ## 1. Create a New User
@@ -2122,3 +2123,170 @@ In this part, I learned how to:
 - Search logs for sudo activity.
 - Search logs for SSH events.
 - Filter logs by priority using `journalctl -p`.
+
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+# Part 10 – Project Summary & Key Learnings
+
+## Project Overview
+
+This project was about Linux Administration using Kali Linux. I did lots of common system administration tasks that Linux administrators and entry-level SOC Analysts do.
+
+The project covered things like user and group management file permissions and process monitoring.
+
+## Skills Acquired
+
+## User Management
+
+* I. Managed Linux users.
+
+* I set passwords for users.
+
+* I changed user accounts.
+
+* I managed password rules.
+
+## Group Management
+
+* I. Managed groups.
+
+* I. Removed users from groups.
+
+* I. Deleted groups.
+
+* I checked group membership.
+
+## File. Permissions
+
+* I changed who owned files.
+
+* I managed file permissions.
+
+* I set default permissions using `umask`.
+
+* I worked with Access Control Lists (ACLs).
+
+* I protected files so they couldn't be changed.
+
+## Process Management
+
+* I found out what processes were running.
+
+* I found the IDs of processes.
+
+* I stopped processes safely.
+
+* I changed how important processes were.
+
+* I managed jobs that ran in the background.
+
+## Service Management
+
+* I started, stopped and restarted services.
+
+* I made services start or not start when the computer boots.
+
+* I checked the status of services.
+
+* I looked at service logs.
+
+## Storage Management
+
+* I looked at storage devices.
+
+* I checked how much space was used on filesystems.
+
+* I viewed mounted filesystems.
+
+* I checked partition information.
+
+## Package Management
+
+* I checked what packages were installed.
+
+* I looked at package information.
+
+* I checked package dependencies.
+
+* I found out what updates were available.
+
+## Job Scheduling
+
+* I worked with Cron jobs.
+
+* I scheduled tasks to run once.
+
+* I watched commands that were running.
+
+* I measured how long tasks took.
+
+## System. Monitoring
+
+* I looked at authentication logs.
+
+* I checked kernel messages.
+
+* I investigated boot logs.
+
+* I filtered system journal entries.
+
+## Tools Used
+
+* Kali Linux
+
+* Bash
+
+* systemd
+
+* APT Package Manager
+
+* Git
+
+* GitHub
+
+* VirtualBox
+
+## What I Learned
+
+I got hands-on experience with Linux administration by doing tasks that Linux administrators do.
+
+I learned how to:
+
+* Manage users and groups.
+
+* Set file permissions.
+
+* Watch system processes.
+
+* Manage Linux services.
+
+* Work with storage devices and filesystems.
+
+* Manage packages.
+
+* Automate tasks using scheduling tools.
+
+* Investigate system logs to fix problems.
+
+## Career Relevance
+
+These Linux administration skills are useful for:
+
+* SOC Analyst (L1)
+
+* Linux System Administrator
+
+* Security Operations
+
+* Incident Response
+
+## Final
+
+This project helped me understand Linux administration through practice and documentation. It gave me hands-on experience with administrative tasks that are important, for cybersecurity operations and SOC analysis.
+
+The knowledge I gained will help me with work involving Linux servers, security monitoring log analysis and incident investigation.
