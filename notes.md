@@ -1899,3 +1899,226 @@ In this part I learned how to use cron jobs and other commands to schedule tasks
 - Measure command execution time using `time` command.
 
 - Limit command runtime using `timeout` command. I can use these commands to automate tasks and manage system resources.
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+# Part 9 – System Logs & Monitoring
+
+## 1. View Recent Boot LogsC
+
+### Scenario
+
+When the system restarts I need to see what happened when it started up.
+
+### Command
+
+```bash
+
+journalctl -b
+
+```
+
+### Description
+
+This command shows me the logs from the time the system booted up.
+
+### Screenshot
+
+![Alt text](screenshots/journalctl-b.png)
+
+---
+
+## 2. View Kernel Messages with Human- Timestamps
+
+### Scenario
+
+I want to check what happened with the hardware or drivers when I connected a new device.
+
+### Command
+
+```bash
+
+dmesg -T
+
+```
+
+### Description
+
+This command shows me the kernel messages with the date and time in a way that's easy to read.
+
+### Screenshot
+
+![Alt text](screenshots/dmesg-T.png)
+
+---
+
+## 3. Display Authentication Log
+
+### Scenario
+
+I need to review what happened with logins. When someone used sudo.
+
+### Command
+
+```bash
+
+sudo cat /var/log/auth.log
+
+```
+
+### Description
+
+This command shows me the log of when people logged in and used sudo.
+
+### Screenshot
+
+![Alt text](screenshots/auth-log.png)
+
+> **Note:** If `/var/log/auth.log` does not exist on my Kali version I can use:
+
+>
+
+> ```bash
+
+> journalctl. Grep sudo
+
+> ```
+
+---
+
+## 4. View Boot History
+
+### Scenario
+
+I want to check when the system booted up before to help me fix a problem.
+
+### Command
+
+```bash
+
+journalctl --list-boots
+
+```
+
+### Description
+
+This command shows me a list of when the system booted up
+
+### Screenshot
+
+![Alt text]](screenshots/list-boots.png)
+
+---
+
+## 5. View Disk Usage of System Logs
+
+### Scenario
+
+I need to check how space the system logs are taking up.
+
+### Command
+
+```bash
+
+journalctl --disk-usage
+
+```
+
+### Description
+
+This command tells me how space the system journal is using.
+
+### Screenshot
+
+![Alt text]](screenshots/journal-disk-usage.png)
+
+---
+
+## 6. Display Recent Sudo Commands
+
+### Scenario
+
+I want to see what administrators have been doing with sudo.
+
+### Command
+
+```bash
+
+journalctl | grep sudo
+
+```
+
+### Description
+
+This command searches the system logs for when someone used sudo.
+
+### Screenshot
+
+![Alt text](screenshots/journal-sudo.png)
+
+---
+
+## 7. Display SSH Events
+
+### Scenario
+
+I need to check who has been trying to log in with SSH.
+
+### Command
+
+```bash
+
+journalctl | grep ssh
+
+```
+
+### Description
+
+This command searches the system logs for SSH events.
+
+### Screenshot
+
+![Alt text](screenshots/journal-ssh.png)
+
+---
+
+## 8. Display System Journal by Priority
+
+### Scenario
+
+I only want to see the warning and error messages when I am trying to fix a problem.
+
+### Command
+
+```bash
+
+journalctl -p warning
+
+```
+
+### Description
+
+This command shows me the journal entries that're warnings or errors.
+
+### Screenshot
+
+![Alt text](screenshots/journal-warning.png)
+
+---
+
+# Conclusion
+
+In this part, I learned how to:
+
+- View logs from the current boot using `journalctl -b`.
+- Display kernel messages with readable timestamps using `dmesg -T`.
+- Review authentication logs.
+- View previous system boots.
+- Check journal disk usage.
+- Search logs for sudo activity.
+- Search logs for SSH events.
+- Filter logs by priority using `journalctl -p`.
