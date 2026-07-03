@@ -2010,7 +2010,7 @@ This command shows me a list of when the system booted up
 
 ### Screenshot
 
-![Alt text]](screenshots/list-boots.png)
+![Alt text](screenshots/list-boots.png)
 
 ---
 
