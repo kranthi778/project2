@@ -1978,7 +1978,7 @@ This command shows me the log of when people logged in and used sudo.
 
 ![Alt text](screenshots/auth-log.png)
 
-> **Note:** If `/var/log/auth.log` does not exist on my Kali version I can use:
+>  **Note:** If `/var/log/auth.log` does not exist on my Kali version I can use:
 
 >
 
@@ -2034,7 +2034,7 @@ This command tells me how space the system journal is using.
 
 ### Screenshot
 
-![Alt text]](screenshots/journal-disk-usage.png)
+![Alt text](screenshots/journal-disk-usage.png)
 
 ---
 
