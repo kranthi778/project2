@@ -1656,3 +1656,246 @@ In this part, I learned how to:
 - Display packages available for upgrade using `apt list --upgradable`.
 
 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+# Part 8 – Job Scheduling
+
+## 1. View Current Users Cron Jobs
+
+### Scenario
+
+I want to see what cron jobs the current user has set up. Before I create a scheduled task I need to check if the current user already has some cron jobs configured.
+
+### Command
+
+```bash
+
+crontab -l
+
+```
+
+### Description
+
+This command shows me all the cron jobs that are set up for the user. It is like a list of all the tasks that are scheduled to run
+
+### Screenshot
+
+![Alt text](screenshots/crontab-list.png)
+
+---
+
+## 2. Edit Cron Jobs
+
+### Scenario
+
+Lets say I want to schedule a script to run every day. I need to edit the cron jobs to add this task.
+
+### Command
+
+```bash
+
+crontab -e
+
+```
+
+### Description
+
+This command opens up the cron table for the user and I can edit it to add new tasks or change existing ones. It is like a text editor. For cron jobs.
+
+### Screenshot
+
+![Alt text](screenshots/crontab-edit.png)
+
+---
+
+## 3. Schedule a One-Time Task
+
+### Scenario
+
+I have a maintenance script that I need to run at a specific time. I can use the `at` service to schedule this task.
+
+### Command
+
+```bash
+
+echo "date > /tmp/job.txt" at now + 2 minutes
+
+```
+
+### Description
+
+This command schedules a one-time task using the `at` service. The task will run in 2 minutes. It will write the current date to a file called job.txt.
+
+### Screenshot
+
+![Alt text](screenshots/at-job.png)
+
+---
+
+## 4. View Pending One-Time Jobs
+
+### Scenario
+
+After I schedule a one-time task I want to make sure it has been added successfully. I can use the `atq` command to view all the pending jobs.
+
+### Command
+
+```bash
+
+atq
+
+```
+
+### Description
+
+This command lists all the pending `at` jobs. I can see the job number, the time it will run and the command that will be executed.
+
+### Screenshot
+
+![Alt text](screenshots/atq.png)
+
+---
+
+## 5. Remove a Scheduled Job
+
+### Scenario
+
+Lets say I have a scheduled job that I no longer need. I can remove it using the `atrm` command.
+
+### Command
+
+```bash
+
+atrm 1
+
+```
+
+### Description
+
+This command removes the specified `at` job. I need to replace `1` with the job number that I got from the `atq` command.
+
+### Screenshot
+
+![Alt text](screenshots/atrm.png)
+
+---
+
+## 6. Pause Command Execution
+
+### Scenario
+
+Sometimes I need to delay a script before it executes the command. I can use the `sleep` command to pause the execution.
+
+### Command
+
+```bash
+
+sleep 10
+
+```
+
+### Description
+
+This command pauses the execution for 10 seconds. It is, like a timeout. I can specify how long I want to wait.
+
+### Screenshot
+
+![Alt text](screenshots/sleep.png)
+
+---
+
+## 7. Monitor a Command
+
+### Scenario
+
+I am troubleshooting an issue and I need to monitor the disk usage every 5 seconds. I can use the `watch` command to execute a command
+
+### Command
+
+```bash
+
+watch df -h
+
+```
+
+### Description
+
+This command executes the `df -h` command repeatedly. It updates the output every 2 seconds. I can see the disk usage and it helps me to troubleshoot the issue.
+
+### Screenshot
+
+![Alt text](screenshots/watch.png)
+
+---
+
+## 8. Measure Command Execution Time
+
+### Scenario
+
+I want to know how long a command takes to execute. I can use the `time` command to measure the execution time.
+
+### Command
+
+```bash
+
+time ls -R
+
+```
+
+### Description
+
+This command measures the execution time of the `ls -R` command. It shows me how long it took to execute the command. It helps me to optimize my scripts.
+
+### Screenshot
+
+![Alt text](screenshots/time.png)
+
+---
+
+## 9. Limit Command Runtime
+
+### Scenario
+
+I have a command that might run indefinitely. I want to prevent it from running too long. I can use the `timeout` command to limit the runtime.
+
+### Command
+
+```bash
+
+timeout 5 ping google.com
+
+```
+
+### Description
+
+This command stops the `ping google.com` command after 5 seconds. It prevents the command from running and it helps me to avoid wasting system resources.
+
+### Screenshot
+
+![Alt text](screenshots/timeout.png)
+
+---
+
+# conclusion
+
+In this part I learned how to use cron jobs and other commands to schedule tasks and manage command execution. I learned how to:
+
+- View scheduled cron jobs using `crontab -l` command.
+
+- Create or edit cron jobs using `crontab -e` command.
+
+- Schedule one-time tasks using `at` command.
+
+- View pending scheduled jobs using `atq` command.
+
+- Remove scheduled jobs using `command.
+
+- Pause command execution using `sleep` command.
+
+- Continuously monitor command output using `watch` command.
+
+- Measure command execution time using `time` command.
+
+- Limit command runtime using `timeout` command. I can use these commands to automate tasks and manage system resources.
